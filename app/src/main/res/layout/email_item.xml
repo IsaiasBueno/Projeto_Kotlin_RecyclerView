@@ -1,17 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        xmlns:tools="http://schemas.android.com/tools"
         tools:showIn="@layout/activity_main"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_view_bg"
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-            android:layout_marginBottom="24dp"
-            android:background="@color/colorPrimary"
-            android:text="Hello"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_height="wrap_content">
 
-</LinearLayout>
+            <TextView   android:id="@+id/txt_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:textSize="24sp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/circle"
+                        android:gravity="center"
+                        tools:text="F"
+                        android:layout_toStartOf="@id/txt_date"/>
+
+            <TextView   android:id="@+id/txt_user"
+                        android:textColor="@color/darkergray"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_toEndOf="@id/txt_icon"
+                        android:layout_alignTop="@id/txt_icon"
+                        tools:text="Facebook"/>
+
+
+            <TextView   android:id="@+id/txt_subject"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textColor="@color/darkergray"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_user"
+                        android:layout_alignStart="@id/txt_user"
+                        android:layout_toEndOf="@id/txt_icon"
+                        tools:text="Facebook Facebook Facebook"/>
+
+            <TextView   android:id="@+id/txt_preview"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textColor="@color/darkergray"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_subject"
+                        android:layout_alignStart="@id/txt_user"
+                        android:layout_toEndOf="@id/txt_icon"
+                        android:layout_marginEnd="24dp"
+                        tools:text="Preview Preview"/>
+
+            <TextView
+                    android:id="@+id/txt_date"
+                    android:textColor="@color/darkergray"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    tools:text="20 mai"/>
+
+            <ImageView
+                    android:id="@+id/img_star"
+                    android:src="@drawable/ic_baseline_star_border_24"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+
+        </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
